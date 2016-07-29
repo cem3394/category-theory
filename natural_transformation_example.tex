@@ -1,0 +1,61 @@
+\documentclass[]{article}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{amssymb}
+% ----------------------------------------------------------------
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+\numberwithin{equation}{section}
+% MATH -----------------------------------------------------------
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\BX}{\mathbf{B}(X)}
+\newcommand{\A}{\mathcal{A}}
+
+%opening
+\title{Natural Transformation Notes}
+\author{Chris and David}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	These are notes taken in our Functional Programming Study Group
+\end{abstract}
+
+\section{Natural Transformations}
+	We work out the example of the determinant interpreted as a natural transformation, which is discussed on page 16 of Mac Lane's "Categories for the Working Mathematician."
+	
+	Recall that a natural transformation is defined in terms of two categories, $(C),\ (B)$, along with two funtors, $S,T: (C)\to (B)$. That is, a natural transformation $\tau$, is really
+	\[
+		\tau=\tau(S,T,C,B): Ob(C)\to Mor(B).
+	\]
+	
+	We can interpret the determinant as a natural transformation, $$\det = \det (GL_n(\cdot), (\cdot)^\times,(CommAlg),(Grps)).$$
+	Here, $GL_n(\cdot),(\cdot)^\times:(CommAlg)\to (Grps)$ are functors. (Note that $n$ is fixed.).
+	
+	Then for $\mathbb{R}, \mathbb{C}\in Ob(CommAlg)$, let $f:\mathbb{R}\to \mathbb{C}$ be the standard inclusion map (homomorphism). Then
+	\begin{align*}
+		{\rm det}_\mathbb{R} &= GL_n \mathbb{R}\to \mathbb{R}^\times\\
+		{\rm det}_\mathbb{C} &= GL_n \mathbb{C}\to \mathbb{C}^\times
+	\end{align*}
+	is the value of the determinant natural transformation applied to $\mathbb{R}.$ To see that this is a natural transformation, we have to see that this map commutes with the standard inclusion homomorphism.
+	
+	
+\end{document}
